@@ -1,13 +1,15 @@
-import './App.css' // Mengimpor file CSS untuk styling aplikasi
-import UserForm from './components/UserForm' // Mengimpor komponen UserForm dari folder components
+import './App.css'
+import UserForm from './components/UserForm'
 
-export default function AppCustomHook() { // Mendefinisikan dan mengekspor komponen fungsi utama bernama AppCustomHook
+export default function AppCustomHook() {
 
   return (
     <main>
-      <h1>Belajar React Custom Hook</h1>  {/* Menampilkan judul pada halaman */}
+      <h1>Belajar React Custom Hook</h1>
 
-      <UserForm />  {/* Merender komponen UserForm yang diimpor di atas */}
+      <UserForm />
     </main>
   )
+
+
 }

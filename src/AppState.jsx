@@ -34,5 +34,4 @@ export default function AppState() { // Komponen utama React bernama AppState
       </button>
     </main>
   )
-
 }

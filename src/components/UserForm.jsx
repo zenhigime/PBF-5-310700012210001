@@ -1,46 +1,39 @@
-import React from 'react'; // Mengimpor library React
-import useInput from '../hooks/useInput'; // Mengimpor custom hook useInput dari folder hooks
+import React from 'react';
+import useInput from '../hooks/useInput';
 
-export default function UserForm() { // Mendefinisikan dan mengekspor komponen fungsi bernama UserForm
+export default function UserForm() {
 
   const [firstName, bindFirstName, resetFirstName] = useInput('Hendra');
-  // Menggunakan custom hook useInput untuk firstName:
-  // - firstName: nilai input saat ini
-  // - bindFirstName: properti yang akan di-spread ke <input>
-  // - resetFirstName: fungsi untuk mereset input ke default
-
   const [lastName, bindLastName, resetLastName] = useInput('Permana')
-  // Menggunakan custom hook useInput untuk lastName
-
-  const [title, setTitle] = React.useState('')  // State biasa React untuk menyimpan teks hasil setelah submit
+  const [title, setTitle] = React.useState('')
 
   const submitHandler = e => {
-    e.preventDefault(); // Mencegah reload halaman saat form disubmit
+    e.preventDefault();
 
-    setTitle(`Hello ${firstName} ${lastName}`) // Menyusun pesan sapaan dari input dan menyimpannya ke state title
-    resetFirstName(); // Mereset input setelah submit
-    resetLastName(); // Mereset input setelah submit
+    setTitle(`Hello ${firstName} ${lastName}`)
+    resetFirstName();
+    resetLastName();
   }
 
   return (
     <>
-      <h3>{title}</h3>  {/* Menampilkan hasil sapaan di sini */}
-      <form onSubmit={submitHandler}>  {/* handle event submit */}
+      <h3>{title}</h3>
+      <form onSubmit={submitHandler}>
         <div>
-          <label>First Name</label> {/* menyediakan teks label di atas (atau di samping) input form */}
+          <label>First Name</label>
           <input
             {...bindFirstName}
-            type='text' /> {/* Menghubungkan input ke hook useInput untuk firstName */}
+            type='text' />
         </div>
 
         <div>
           <label>Last Name</label>
           <input
             {...bindLastName}
-            type='text' /> {/* Menghubungkan input ke hook useInput untuk lastName */}
+            type='text' />
         </div>
 
-        <button>Submit</button> {/* Tombol untuk submit form */}
+        <button>Submit</button>
       </form>
     </>
   )

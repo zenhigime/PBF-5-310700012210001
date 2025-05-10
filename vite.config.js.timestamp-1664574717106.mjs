@@ -1,10 +1,10 @@
 // vite.config.js
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite"; // Mengimpor fungsi defineConfig dari 'vite'
+import react from "@vitejs/plugin-react"; // Mengimpor plugin React untuk Vite
 var vite_config_default = defineConfig({
   plugins: [react()],
   server: {
-    host: "0.0.0.0"
+    host: "0.0.0.0" // Mengatur host server agar dapat diakses dari luar
   }
 });
 export {

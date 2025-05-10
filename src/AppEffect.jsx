@@ -1,45 +1,47 @@
-import './App.css' // Mengimpor file CSS untuk styling aplikasi
-import React, { useState, useEffect } from 'react'; // Mengimpor React dan dua hook: useState untuk state, useEffect untuk efek samping
-import { uniqueNamesGenerator, adjectives, colors, animals } from 'unique-names-generator'; // Mengimpor fungsi dan daftar kata dari library untuk membuat nama acak
+import './App.css'
+import React, { useState, useEffect } from 'react';
+import { uniqueNamesGenerator, adjectives, colors, animals } from 'unique-names-generator';
 
 
-const customConfig = { // Konfigurasi generator nama:
-  dictionaries: [adjectives, colors, animals], // - menggunakan 3 jenis kata (sifat, warna, hewan)
-  separator: ' ', // - dipisahkan spasi
-  length: 3, // - panjang nama = 3 kata
+const customConfig = {
+  dictionaries: [adjectives, colors, animals],
+  separator: ' ',
+  length: 3,
 };
 
-export default function AppEffect() { // Komponen utama React bernama AppEffect
+export default function AppEffect() {
 
-  const [randomName, setRandomName] = useState();  // State untuk menyimpan nama acak yang dihasilkan
-  const [generateCount, setGenerateCount] = useState(0);  // State untuk menghitung berapa kali nama digenerate
+  const [randomName, setRandomName] = useState();
+  const [generateCount, setGenerateCount] = useState(0);
 
-  useEffect(() => { // useEffect dijalankan setiap kali randomName berubah Jika randomName tidak kosong, maka generateCount akan ditambah 1
+  useEffect(() => {
     if (randomName) {
       setGenerateCount(generateCount + 1)
     }
   }, [randomName])
 
 
-  function generateRandomName() { // Fungsi untuk membuat nama acak menggunakan konfigurasi, lalu memperbarui randomName
+  function generateRandomName() {
     const generatedName = uniqueNamesGenerator(customConfig);
     setRandomName(generatedName)
   }
 
   return (
     <main>
-      <h1>Belajar React Hook</h1> {/* judul */}
-      <p>Random Name Generator</p> {/* deskripsi */}
+      <h1>Belajar React Hook</h1>
+      <p>Random Name Generator</p>
       {
-        randomName && <h3>{randomName}</h3> // Menampilkan nama acak jika sudah tersedia
+        randomName && <h3>{randomName}</h3>
       }
       <button
         style={{ alignSelf: 'center' }}
-        onClick={generateRandomName} // Memanggil fungsi generateRandomName saat tombol diklik
+        onClick={generateRandomName}
       >
         Generate Random Name
-      </button> {/* Tombol untuk memicu pembuatan nama acak */}
-      <p>Digenerate sebanyak {generateCount} kali</p> {/* Menampilkan berapa kali tombol diklik (nama digenerate) */}
+      </button>
+      <p>Digenerate sebanyak {generateCount} kali</p>
     </main>
   )
+
+
 }

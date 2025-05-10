@@ -6,6 +6,6 @@ import AppCustomHook from './AppCustomHook'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AppCustomHook />
+    <AppCustomHook /> {/*Mengganti komponen yang akan dirender*/}
   </React.StrictMode>
 )
