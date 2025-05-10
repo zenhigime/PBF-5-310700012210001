@@ -6,7 +6,7 @@ import { uniqueNamesGenerator, adjectives, colors, animals } from 'unique-names-
 const customConfig = { // Konfigurasi generator nama:
   dictionaries: [adjectives, colors, animals], // - Menggunakan 3 kamus kata: sifat, warna, hewan
   separator: ' ', // - Dipisahkan dengan spasi
-  length: 3, // - Total 3 kata per nama.
+  length: 3, // - Total 3 kata per nama
 };
 
 export default function AppState() { // Komponen utama React bernama AppState
@@ -30,7 +30,7 @@ export default function AppState() { // Komponen utama React bernama AppState
         style={{ alignSelf: 'center' }} // Styling tombol agar berada di tengah
         onClick={generateRandomName} // Memanggil fungsi generateRandomName saat tombol diklik
       >
-        Generate Random Name {/* Tombol untuk memicu pembuatan nama acak saat diklik */}
+        Generate Random Name {/* Tombol untuk memicu pembuatan nama acak saat diklik... */}
       </button>
     </main>
   )
