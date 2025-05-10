@@ -30,7 +30,7 @@ export default function AppState() { // Komponen utama React bernama AppState
         style={{ alignSelf: 'center' }} // Styling tombol agar berada di tengah
         onClick={generateRandomName} // Memanggil fungsi generateRandomName saat tombol diklik
       >
-        Generate Random Name {/* Tombol untuk memicu pembuatan nama acak saat diklik... */}
+        Generate Random Name {/* Tombol untuk memicu pembuatan nama acak saat diklik */}
       </button>
     </main>
   )

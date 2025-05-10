@@ -1,8 +1,8 @@
 main {
-  text-align: center;
-  vertical-align: center;
-  display: flex;
-  flex-direction: column;
-  margin-top: 30px;
-  flex-basis: auto;
+  text-align: center; /* Menengahkan teks di dalam elemen <main> */
+  vertical-align: center; /* Menengahkan elemen secara vertikal */
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  flex-direction: column; /* Mengatur arah flexbox menjadi kolom */
+  margin-top: 30px; /* Memberikan margin atas sebesar 30px */
+  flex-basis: auto; /* Mengatur basis flexbox agar otomatis */
 }
